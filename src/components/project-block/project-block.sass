@@ -1,0 +1,35 @@
+.project-block 
+	display: block 
+	max-width: 706px
+
+	&:hover 
+		.project-block__image 
+			img 
+				transform: scale(1.05)
+
+	&__image 
+		overflow: hidden
+		height: 421px
+		img
+			width: 100% 
+			height: 100%
+			object-fit: cover
+			transition: transform 0.5s
+	
+	&__desc 
+		color: $white
+		padding: 37px 50px 
+		max-width: 489px 
+		position: absolute 
+		left: 0 
+		bottom: 0 
+		z-index: 2
+		opacity: 0 
+		transform: translateY(35px)
+		transition: opacity 0.45s, transform 0.45s
+		transition-delay: 0.35s
+	
+	+bp($bp-small)
+		&__desc 
+			padding: 20px
+	

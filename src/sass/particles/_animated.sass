@@ -1,0 +1,25 @@
+$animation-transition: opacity 1.3s cubic-bezier(.19,1,.22,1), transform 1.3s cubic-bezier(.19,1,.22,1)
+$animation-delay: .2s
+$animation-translate: 75px
+
+
++bp(769px, 'min')
+  .js-anim
+    opacity: 0
+    transition-delay: $animation-delay
+    &.visible
+      opacity: 1
+      transform: translate(0, 0)!important
+      transition: $animation-transition
+    
+    &.anim-left
+      transform: translateX(-$animation-translate)
+
+    &.anim-right
+      transform: translateX($animation-translate)
+
+    &.anim-top
+      transform: translateY(-$animation-translate)
+
+    &.anim-bottom
+      transform: translateY($animation-translate)

@@ -1,0 +1,91 @@
+extends pug/base
+include components/project-block/project-block
+
+
+append vars
+	- title = 'Главная'
+
+block content
+	section.top 
+		.wrapper
+			.top__part 
+				.top__desc 
+					h1.title-h1.top__title Монтаж винтовых свай и свайно-винтовых фундаментов
+					a.btn(href="#") 
+						span Бесплатная консультация!
+				.top__data
+					small.top-data__name Позвоните нам:
+					a.top__phone(href="tel:+74951368087") + 7(495) 136-80-87
+					a.btn.btn--bor(href="#") 
+						span Заказать звонок
+	
+	section.about 
+		.about__image 
+			+img('top-image.png')
+		.wrapper
+			.grid.about__grid
+				.grid__left.about__left
+					h4.title-h4.title-h4--decor.about__name.js-anim.anim-left Механическая установка винтовых свай
+					a.btn.btn--blue.about__btn(href="#") 
+						span Получите скидку на монтаж 
+				.grid__right.about__right 
+					.about__line
+						.about__picture.js-anim.anim-bottom 
+							+img('project-1.png')
+						h2.title-h2 В нашей компании вы можете заказать механический монтаж винтовых свай под ключ в Московской области с помощью компактной гидравлической установки.
+					.about__desc-wrap
+						.about__desc
+							p Мы готовы осуществить установку свайного фундамента в Москве и Московской области даже в самых тяжелых условиях, где другие организации будут сильно завышать цену или откажутся от объекта. 
+						.about__list
+							.about__unit.js-anim.anim-bottom  
+								+svg('unit-1').about__icon 
+								.about__text 
+									p Не требуется проезд на участок
+							.about__unit.about__unit--large.js-anim.anim-bottom  
+								+svg('unit-2').about__icon 
+								.about__text 
+									p Возможность монтажа внутри помещений
+							.about__unit.js-anim.anim-bottom 
+								+svg('unit-3').about__icon 
+								.about__text 
+									p Отсутствие приямков
+							.about__unit.js-anim.anim-bottom  
+								+svg('unit-4').about__icon 
+								.about__text 
+									p Монтаж свай не отходя от размеров
+	
+	section.project
+		.wrapper 
+			.grid 
+				.grid__left.project__left 
+					h4.title-h4.title-h4--decor.js-anim.anim-left Наши проекты
+					p.js-anim.anim-left Монтаж в любых условиях
+				.grid__right
+					.project-slider.swiper-container.js-project-slider
+						.swiper-wrapper 
+							.swiper-slide.project-slider__slide
+								+project-block({
+									img: 'project-2.jpg',
+									title: 'Винтовые сваи под дома',
+									text: 'Установка винтовых свай под каркасные, брусовые, щитовые и бревенчатые дома'
+								})
+							.swiper-slide.project-slider__slide
+								+project-block({
+									img: 'project-3.jpg',
+									title: 'Винтовые сваи под дома',
+									text: 'Установка винтовых свай под каркасные, брусовые, щитовые и бревенчатые дома'
+								})
+							.swiper-slide.project-slider__slide
+								+project-block({
+									img: 'project-2.jpg',
+									title: 'Винтовые сваи под дома',
+									text: 'Установка винтовых свай под каркасные, брусовые, щитовые и бревенчатые дома'
+								})
+					.project__nav 
+						.project__arrow.js-project-slider-prev
+							+svg('arrow-prev')
+						a.link.link--line.project__link(href="#") Все проекты
+						.project__arrow.project__arrow--next.js-project-slider-next
+							+svg('arrow-next')
+
+

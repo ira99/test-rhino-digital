@@ -1,0 +1,29 @@
+mixin header(props)
+  header.header.js-header
+    .header__line
+      a.header__logo(href="#")
+        +img('logo.svg')
+      span.header__inform Мы работаем: 10:00 - 20:00 ежедневно
+      span.header__inform Под ключ в Московской области
+      .header__menu.js-menu
+        nav.nav 
+          ul.nav__list
+            li.nav__item: a.nav__link.is-active(href="#") Главная
+            li.nav__item: a.nav__link(href="#") Услуги
+            li.nav__item: a.nav__link(href="#") Цены
+            li.nav__item: a.nav__link(href="#") Наши проекты
+            li.nav__item: a.nav__link(href="#") О нас
+            li.nav__item: a.nav__link(href="#") Статьи
+            li.nav__item: a.nav__link(href="#") Отзывы
+            li.nav__item: a.nav__link(href="#") Контакты
+        .header__mobile-block 
+          .header__mobile-data 
+            small.header__mobile-name Часы работы офиса:
+            .header__mobile-tx С 9:00 до 18:00 ежедневно
+          .header__mobile-data 
+            small.header__mobile-name Позвоните нам:
+            a.header__mobile-tx(href="tel:+74951368087") + 7(495) 136-80-87
+          a.btn.btn--bor.header__btn-mobile(href="#") Заказать звонок
+      a.btn.btn--bor.btn--small.header__btn(href="#") Заказать звонок
+      .burger.js-burger
+        span

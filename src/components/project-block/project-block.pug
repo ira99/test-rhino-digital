@@ -1,0 +1,7 @@
+mixin project-block(data)
+  a.project-block(href="#")
+    .project-block__image 
+      +img(data.img) 
+    .project-block__desc 
+      h4.title-h3=data.title 
+      p=data.text

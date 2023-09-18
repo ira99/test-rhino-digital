@@ -1,0 +1,178 @@
+.header
+	position: fixed 
+	top: 0 
+	left: 0
+	z-index: 50 
+	width: 100% 
+	transition: background-color 0.3s
+
+	&.is-fixed 
+		background-color: $dark
+
+	&__line
+		display: flex 
+		align-items: center
+		padding: 24px 46px 
+		font-size: rem(14px)
+		color: $gray
+		max-width: 1725px 
+		margin: 0 auto
+
+	&__mobile-block 
+		display: none 
+
+	&__inform 
+		margin-left: 27px 
+
+	&__menu 
+		margin-left: auto 
+  
+	&__logo 
+		max-width: 107px
+		flex-shrink: 0 
+	
+	&__btn 
+		display: none
+
+	+bp($bp-large2)
+		&__inform 
+			display: none
+
+	+bp($bp-medium)
+		&__line 
+			padding: 12px 20px 
+		&__menu 
+			position: absolute
+			top: 54px 
+			left: 0 
+			bottom: 0 
+			right: 0
+			background-color: $dark
+			padding: 30px 20px 55px
+			pointer-events: none 
+			opacity: 0 
+			height: calc(100vh - 54px)
+			overflow-y: auto
+			transform: translate3d(100%,0,0)
+			&.is-active
+				transition: 0.35s ease
+				pointer-events: auto 
+				opacity: 1 
+				transform: translate3d(0,0,0)
+		&__btn 
+			display: inline-flex 
+			margin-left: auto 
+			margin-right: 30px
+		
+		&__mobile-block 
+			display: block 
+			margin-top: 50px
+		
+		&__mobile-data 
+			margin-bottom: 20px
+		
+		&__mobile-tx 
+			color: $white 
+			display: block 
+			font-size: rem(16px)
+			margin-top: 6px
+		
+		&__btn-mobile 
+			display: none
+	
+	+bp($bp-small)
+		&__btn 
+			display: none
+		
+		&__logo 
+			max-width: 75px
+		
+		&__btn-mobile 
+			display: flex
+			margin-top: 40px
+
+.nav 
+	&__list 
+		display: flex 
+	&__item 
+		padding-left: 36px
+	&__link 
+		transition: color 0.4s
+		white-space: nowrap
+		&:hover, 
+		&.is-active
+			color: $white
+
+	+bp($bp-large)
+		&__item 
+			padding-left: 1.5vw
+  
+	+bp($bp-large2)
+		&__item 
+			padding-left: 25px
+	
+	+bp($bp-medium)
+		&__list 
+			display: block
+		&__item 
+			margin-bottom: 22px
+			padding-left: 0
+		&__link 
+			font-size: rem(16px)
+		
+
+.burger 
+	background: transparent 
+	position: relative 
+	height: 30px 
+	width: 30px 
+	cursor: pointer  
+	display: none
+
+	span, 
+	span:before,
+	span:after
+		cursor: pointer 
+		border-radius: 1px 
+		height: 2.5px 
+		width: 24px 
+		background: $white
+		position: absolute 
+		right: 0 
+		top: 50% 
+		display: block 
+		content: '' 
+		transition: all 0.5s ease-in-out
+
+	span 
+		width: 12px
+		&:before 
+			top: -7px 
+		&:after 
+			top: 7px 
+			width: 18px 
+	&.is-active 
+		span 
+			background-color: transparent 
+			&:before 
+				transform: rotate(135deg) 
+			&:after 
+				transform: rotate(-135deg) 
+				width: 24px
+
+	+bp($bp-medium)
+		display: block
+	
+	+bp($bp-small)
+		margin-left: auto
+
+
+
+.burger.is-active span:before,
+.burger.is-active span:after 
+	top: 0 
+	span 
+		background-color: transparent 
+	span:before,
+	span:after 
+		background-color: $white
